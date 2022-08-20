@@ -1,0 +1,107 @@
+.widgetbar {
+    position: relative;
+    margin-top: 63px;
+    flex: 0.29;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    height: fit-content;
+    padding-bottom: 10px;
+    @include breakpoint(large) {
+        display: none;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+
+        svg {
+            color: #0a66c2;
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+
+    &__article {
+        display: flex;
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: whitesmoke;
+        }
+
+        &-left {
+            color: #0a66c2;
+            margin-right: 5px;
+
+            svg {
+                font-size: 15px !important;
+            }
+        }
+
+        &-right {
+            flex: 1;
+
+            h4 {
+                font-size: 14px;
+            }
+
+            p {
+                font-size: 12px;
+                color: gray;
+            }
+        }
+    }
+
+    &__footer {
+        position: absolute;
+        padding-top: 1.6rem;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 0rem 2.4rem;
+
+
+            li {
+                color: gray;
+                font-size: 12px;
+                padding-right: 7px;
+                line-height: 2;
+
+                &:hover {
+                    color: #0a66c2;
+                }
+
+                svg {
+                    margin-bottom: -1px;
+                    margin-left: 1px;
+                }
+            }
+        }
+
+        .footer__copyright {
+            text-align: center;
+            margin-top: 0.9rem;
+
+            img {
+                object-fit: cover;
+                height: 14px;
+                vertical-align: middle;
+            }
+
+            span {
+                font-size: 12px;
+                color: rgba(0, 0, 0, 0.9);
+            }
+        }
+    }
+}

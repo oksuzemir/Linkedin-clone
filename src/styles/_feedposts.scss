@@ -1,0 +1,169 @@
+.post {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    position: relative;
+
+    &__dots {
+        position: absolute;
+        right: -3.7rem;
+        top: 0.5rem;
+
+        svg {
+            cursor: pointer;
+            margin-right: 8px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        &-option {
+            display: flex;
+            right: 0;
+            position: absolute;
+            white-space: nowrap;
+            border-radius: 8px;
+            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2), 0px 4px 4px rgba(0, 0, 0, 0.2);
+            padding: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+
+            p {
+                transform: translateY(1px);
+            }
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    &__header {
+        display: flex;
+        margin-bottom: 10px;
+
+        .post__info {
+            margin-left: 10px;
+
+            h2 {
+                font-size: 15px;
+            }
+
+            p {
+                color: gray;
+                font-size: 12px;
+            }
+        }
+    }
+
+    &__body {
+        overflow-wrap: anywhere;
+
+        p {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: black;
+
+            &:hover {
+                color: navy;
+            }
+        }
+
+        .likes {
+            position: relative;
+            margin-left: 4px;
+
+            &:before {
+                position: absolute;
+                content: '';
+                background-color: #0a66c2;
+                width: 16px !important;
+                height: 16px !important;
+                left: -2.6px;
+                top: 5px;
+                border-radius: 50%;
+            }
+
+            svg {
+                position: relative;
+                transform: rotateY(180deg);
+                width: 10px !important;
+                height: 10px !important;
+                z-index: 16 !important;
+                color: white;
+                margin-right: 5px;
+
+                @include breakpoint(headersmall) {
+                    margin-bottom: -1px;
+                }
+            }
+
+            span {
+                font-style: normal;
+                font-size: 13px;
+                color: gray;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        border-top: 1px solid lightgray;
+        margin-top: 5px;
+        padding-top: 2px;
+
+        @include breakpoint(small) {
+            justify-content: space-around;
+        }
+
+        .input__option:nth-child(4) {
+            svg {
+                transform: rotate(-35deg);
+                margin-right: -3px;
+            }
+        }
+
+        .input__option h4 {
+            @include breakpoint(small) {
+                display: none;
+            }
+        }
+
+        .input__option:nth-child(1) {
+            svg {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+}
+
+.hide {
+    opacity: 0 !important;
+    visibility: hidden;
+}
+
+.hide__dots {
+    right: 1.3rem !important;
+}
+
+.likes {
+    animation: fadeIn 0.5s ease-in-out;
+    -webkit-animation: fadeIn 0.5s ease-in-out;
+    -moz-animation: fadeIn 0.5s ease-in-out;
+    -o-animation: fadeIn 0.5s ease-in-out;
+    -ms-animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+
+    100% {
+        height: 100%;
+        opacity: 1;
+    }
+}

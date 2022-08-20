@@ -1,0 +1,94 @@
+.feed {
+    padding-top: 53px;
+    flex: 0.5;
+    height: fit-content;
+    margin: 0 25px;
+
+    @include breakpoint(large) {
+        padding-top: 73px;
+        flex: 0.6;
+    }
+
+    @include breakpoint(medium) {
+        margin: 0;
+        padding-top: 30px;
+    }
+
+    @include breakpoint(small) {
+        width: 100vw;
+    }
+
+
+    &__input-container {
+        background-color: white;
+        padding: 10px 12px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        white-space: nowrap;
+
+        .feed__avatar {
+            margin-right: 10px;
+            width: 48px !important;
+            height: 48px !important;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+
+            svg {
+                transform: translateY(3px);
+            }
+        }
+
+        .feed__input-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+
+            @include breakpoint(small) {
+                flex-wrap: wrap;
+
+                .input__option:last-child {
+                    @media screen and (max-width: 425px) {
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+
+
+        .feed__input {
+            border: 1px solid lightgray;
+            border-radius: 30px;
+            padding: 10px;
+            color: gray;
+            padding-left: 15px;
+            display: inline-block;
+            width: 88%;
+
+            @media screen and(max-width:950px) {
+                width: 85%;
+            }
+
+            form {
+                display: flex;
+                width: 100%;
+
+                ::placeholder {
+                    font-size: 14px;
+                    font-weight: 550;
+                }
+
+                input {
+                    border: none;
+                    flex: 1;
+                    margin-left: 10px;
+                    outline: none;
+                }
+
+                button {
+                    display: none;
+                }
+            }
+        }
+    }
+}

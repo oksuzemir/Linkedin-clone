@@ -1,0 +1,57 @@
+.footer {
+    background-color: white;
+    display: flex;
+    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    @include breakpoint(xsmedium) {
+        display: none;
+    }
+    
+    &__icon {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+        margin-top: -2px;
+
+        span {
+            font-size: 13px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        align-items: center;
+
+        li:not(:last-child) {
+            padding-right: 16px;
+        }
+
+        li:last-child {
+            padding-right: 16px;
+            margin-bottom: -2px;
+        }
+
+        li {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 1.33;
+            color: rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+
+            svg {
+                margin-top: -3px;
+                margin-left: -3px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+.fixed__options {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: white !important;
+    z-index: 3243 !important;
+    border-top: 1px solid lightgray;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
+
+    .header__option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+        min-width: 52px;
+
+        .def-avatar {
+            width: 24px !important;
+            height: 24px !important;
+        }
+
+        &:hover {
+            color: #000000;
+            transition: 0.3s;
+        }
+
+
+        &-title {
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        &-icon {
+            height: 24px;
+            width: 24px;
+            transition: all 0.2s ease-in;
+
+            @include breakpoint(xxsmall) {
+                height: 20px !important;
+                width: 20px !important;
+            }
+        }
+
+        &-dropdown {
+            display: flex;
+            align-items: center;
+
+            .header__option-title {
+                transform: translateX(-10px);
+            }
+
+
+            svg {
+                position: absolute;
+                font-size: 1.7rem;
+                transform: translateX(2px);
+            }
+        }
+    }
+}

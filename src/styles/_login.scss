@@ -1,0 +1,130 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 90vh;
+    overflow: hidden;
+
+
+    &__section {
+        background-color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 24px 32px 32px;
+        border-radius: 8px;
+
+        @include breakpoint(xsmedium) {
+            box-shadow: none;
+        }
+
+        &-paragraph {
+            margin-bottom: 24px;
+
+            h4 {
+                font-size: 32px;
+                font-weight: 550;
+                color: rgba(0, 0, 0, 0.9);
+                padding-bottom: 4px;
+                line-height: 1.25;
+
+                @include breakpoint(xxsmall) {
+                    font-size: 25px;
+                    padding: 0 10px !important;
+
+                }
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 1.5;
+                color: rgba(0, 0, 0, 0.9);
+
+                @include breakpoint(xxsmall) {
+                    font-size: 12px;
+                    padding: 0 10px !important;
+
+                }
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            @include breakpoint(xxsmall) {
+                width: 100vw !important;
+                padding: 0 10px !important;
+            }
+
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    transition: 0.2s;
+                    text-decoration: underline;
+                }
+            }
+
+            input {
+                width: 350px;
+                height: 50px;
+                font-size: 20px;
+                padding-left: 10px;
+                margin-bottom: 10px;
+                border-radius: 8px;
+                outline: none;
+                border: 1px solid black;
+
+                @include breakpoint(xxsmall) {
+                    width: 100% !important;
+                }
+            }
+
+            button {
+                width: 350px;
+                height: 50px;
+                font-size: large;
+                color: white;
+                background-color: #0a66c2 !important;
+                border-radius: 28px;
+                border: none;
+                outline: none;
+                margin-top: 10px;
+                cursor: pointer;
+
+                @include breakpoint(xxsmall) {
+                    width: 100% !important;
+                }
+
+                &:hover {
+                    background-color: #004182 !important;
+                }
+            }
+
+        }
+
+        .login__register {
+            color: #0a66c2;
+            cursor: pointer;
+        }
+    }
+
+    img {
+        object-fit: contain;
+        margin: 20px 0;
+        transform: translateX(-130px);
+        
+        @include breakpoint(xsmedium) {
+            margin-left: 15px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-top: 5px;
+        }
+        @include breakpoint(xxsmall) {
+            transform: none;
+        }
+
+    }
+
+}

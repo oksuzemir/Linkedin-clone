@@ -1,0 +1,156 @@
+@mixin breakpoint($point) {
+
+  @if $point==large {
+    @media (max-width: rem(992px)) {
+      @content ;
+    }
+  }
+
+  @else if $point==medium {
+    @media (max-width: rem(780px)) {
+      @content ;
+    }
+  }
+
+  @else if $point==xsmedium {
+    @media (max-width: rem(830px)) {
+      @content ;
+    }
+  }
+
+  @else if $point==small {
+    @media (max-width: rem(585px)) {
+      @content ;
+    }
+  }
+
+  @else if $point==xsmall {
+    @media (max-width: rem(613px)) {
+      @content ;
+    }
+  }
+
+  @else if $point==headersmall {
+    @media (max-width: rem(495px)) {
+      @content ;
+    }
+  }
+
+  @else if $point==xxsmall {
+    @media (max-width: rem(370px)) {
+      @content ;
+    }
+  }
+}
+
+*,
+*::before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html {
+  height: fit-content;
+  scroll-behavior: smooth;
+}
+
+.bgh {
+  height: 100vh !important;
+  background-color: #f3f2ef;
+}
+
+.input__option {
+  padding: 10px 8px;
+  border-radius: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: 0.2;
+
+  svg {
+    vertical-align: middle;
+  }
+
+  h4 {
+    display: inline-block;
+    vertical-align: middle;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+    margin-left: 8px;
+  }
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+}
+
+html,
+body {
+  max-width: 100%;
+  height: 100%;
+
+  @include breakpoint(xsmedium) {
+    overflow-x: hidden;
+  }
+}
+
+@function rem($pixels) {
+  @return #{$pixels / 16px}rem;
+}
+
+#root {
+  position: relative;
+
+  @include breakpoint(xsmedium) {
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    &__body {
+      background-color: #f3f2ef;
+      display: flex;
+      max-width: 1150px;
+      margin: 0 auto;
+
+      @include breakpoint(large) {
+        max-width: unset;
+        margin: 0 auto;
+        justify-content: center;
+      }
+
+      @include breakpoint(medium) {
+        flex-direction: column;
+        width: 576px;
+      }
+    }
+  }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: block;
+  height: auto;
+  overflow-x: hidden;
+
+  @include breakpoint(xsmedium) {
+    margin-bottom: 50px;
+  }
+}
